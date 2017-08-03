@@ -1,5 +1,6 @@
 from Card import Card
 from Deck import Deck
+from Player import Player
 
 class Table(object):
     def __init__(self):
@@ -43,5 +44,7 @@ class Table(object):
 # table.debug()
 # card = Card()
 # card.debug()
-deck = Deck("foo","ME")
-deck.debug()
+# deck = Deck("foo","ME")
+# deck.debug()
+player = Player()
+player.debug()
