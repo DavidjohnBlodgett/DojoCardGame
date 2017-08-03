@@ -27,6 +27,9 @@ class Table(object):
         pass
     def endTurn(self):
         pass
+    def startGame(self):
+        print "I started the game"
+        return self
 
     # OTHER LOGIC FUNCTIONS
     def checkDeath(self,player):
