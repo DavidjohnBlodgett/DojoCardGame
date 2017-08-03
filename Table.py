@@ -1,3 +1,6 @@
+from Card import Card
+from Deck import Deck
+
 class Table(object):
     def __init__(self):
         self.players = []
@@ -38,3 +41,7 @@ class Table(object):
 # TEST OUTPUT...
 # table = Table()
 # table.debug()
+# card = Card()
+# card.debug()
+deck = Deck("foo","ME")
+deck.debug()
