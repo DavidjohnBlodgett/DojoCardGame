@@ -20,19 +20,17 @@ class Deck(object):
         for value in range(0, len(self.patients)):
             if self.cards[value].name == card_name:
                 self.remove(value)
-    def remove(self, idx = -1):
-        # default removes top card
-            self.decksize -= 1
-            self.cards.remove(value)
+    def draw(self):
+        returnedcard = self.cards[-1]
+        self.decksize -= 1
+        del self.cards[-1]
+        print "You drew ", returnedcard.debug()
+        return returnedcard
+        pass
     def suffle(self):
         # suffles deck 7 times
         for value in range(0,7):
             random.suffle(self.cards)
-    def draw(self, count):
-        # pull cards from index -value, pass that card to the player, and remove that card
-        for value in range(0, count):
-            self.player.cards.append(self.cards[-value])
-            self.remove()
     def debug(self):
         # lists all current info for deck
         for value in range(0,len(self.cards)):
