@@ -14,16 +14,16 @@ class Deck(object):
             print "Deck is Full, Cannot add card"
         else:
             self.decksize += 1
-                self.cards.append(card)
+            self.cards.append(card)
     def removeSpec(self, card_name):
         # removes a specific card in the deck by name
         for value in range(0, len(self.patients)):
             if self.cards[value].name == card_name:
                 self.remove(value)
-    def remove(self, idx = len(self.cards-1)):
+    def remove(self, idx = -1):
         # default removes top card
-                self.decksize -= 1
-                self.cards.remove(value)
+            self.decksize -= 1
+            self.cards.remove(value)
     def suffle(self):
         # suffles deck 7 times
         for value in range(0,7):
@@ -35,7 +35,7 @@ class Deck(object):
             self.remove()
     def debug(self):
         # lists all current info for deck
-        for value in range(0,len(self.patients)):
+        for value in range(0,len(self.cards)):
             # states all cards in deck as well as their currenty deck index
             print "-------------"
             print self.cards[value].name
