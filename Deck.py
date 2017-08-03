@@ -41,8 +41,8 @@ class Deck(object):
             print self.cards[value].name
             print "index", value
         print "-------------"
-        print self.name
-        print self.player
+        print "Deck Name:", self.name
+        print "Player Name:", self.player
         print "max deck size:", self.max_deck_size
         print "decksize:", self.decksize
         print "-------------"
