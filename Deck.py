@@ -15,16 +15,10 @@ class Deck(object):
         else:
             self.decksize += 1
             self.cards.append(card)
-    def removeSpec(self, card_name):
-        # removes a specific card in the deck by name
-        for value in range(0, len(self.patients)):
-            if self.cards[value].name == card_name:
-                self.remove(value)
     def draw(self):
         returnedcard = self.cards[-1]
         self.decksize -= 1
         del self.cards[-1]
-        print "You drew ", returnedcard.debug()
         return returnedcard
         pass
     def suffle(self):

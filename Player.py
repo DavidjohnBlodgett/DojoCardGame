@@ -9,7 +9,13 @@ class Player(object):
         self.mana = mana
         self.health = health
     def playerDraw(self):
-        self.hand.append(self.decks[0].draw())
+        drawnCard = self.decks[0].draw()
+        self.hand.append(drawnCard)
+        print "You drew ", drawnCard.debug()
+        return self
+    def _firstPlayerDraw(self):
+        for i in range(0,7):
+            self.hand.append(self.decks[0].draw())
         return self
     def showHand(self):
         print "{0}'s Hand is:".format(self.name)
@@ -19,6 +25,19 @@ class Player(object):
     def add(self,deck):
         self.decks.append(deck)
         return self
+    def playCard(self, card_name):
+        # removes a specific card in the deck by name
+        for card in range(0, len(self.hand)):
+            if self.hand[card].name == card_name:
+                self.board.append(self.hand[card])
+                del self.hand[card]
+    def isInHand(self,card_name):
+        result = False
+        for card in self.hand:
+            if card.name is card_name:
+                result = True
+        return result
+    # private functions...
     def debug(self):
         print "Name:", self.name
         print "Board:", self.board
